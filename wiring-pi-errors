@@ -1,0 +1,1002 @@
+pi@raspberrypi:~/BierBot/server $ npm install wiring-pi
+
+> wiring-pi@2.1.0 install /home/pi/BierBot/server/node_modules/wiring-pi
+> /bin/bash ./install.sh
+
+Cloning libWiringPi ... done.
+patching file ./wiringpi/devLib/Makefile
+Hunk #1 succeeded at 24 with fuzz 1 (offset -2 lines).
+Hunk #2 succeeded at 32 with fuzz 2 (offset -2 lines).
+patching file ./wiringpi/gpio/Makefile
+Making libWiringPi ... done.
+Making devLib ...done.
+Unistalling gpio utility ... done.
+Making gpio utility ...  done.
+Installing gpio utility ... done.
+Making wiring-pi ... "make: Entering directory '/home/pi/BierBot/server/node_modules/wiring-pi/build'
+  CXX(target) Release/obj.target/wiringPi/src/addon.o                                   CXX(target) Release/obj.target/wiringPi/src/wiringPi.o
+In file included from ../src/wiringPi.h:4:0,
+                 from ../src/wiringPi.cc:1:
+../src/wiringPi.cc: In function ‘void nodemodule::setup(const v8::FunctionCallbackInfo<v8::Value>&)’:
+../src/addon.h:205:57: warning: ‘v8::Local<v8::String> v8::Value::ToString() const’ is deprecated: Use maybe version [-Wdeprecated-declarations]
+   #define GET_ARGUMENT_AS_TYPE(id, type) args[id]->type()
+                                                         ^
+../src/addon.h:210:38: note: in expansion of macro ‘GET_ARGUMENT_AS_TYPE’
+   #define GET_ARGUMENT_AS_STRING(id) GET_ARGUMENT_AS_TYPE(id, ToString)
+                                      ^~~~~~~~~~~~~~~~~~~~
+../src/wiringPi.cc:52:28: note: in expansion of macro ‘GET_ARGUMENT_AS_STRING’
+     String::Utf8Value mode(GET_ARGUMENT_AS_STRING(0));
+                            ^~~~~~~~~~~~~~~~~~~~~~
+In file included from ../src/addon.h:4:0,
+                 from ../src/wiringPi.h:4,
+                 from ../src/wiringPi.cc:1:
+/home/pi/.node-gyp/10.12.0/include/node/v8.h:10040:15: note: declared here
+ Local<String> Value::ToString() const {
+               ^~~~~
+../src/wiringPi.cc:52:53: warning: ‘v8::String::Utf8Value::Utf8Value(v8::Local<v8::Value>)’ is deprecated: Use Isolate version [-Wdeprecated-declarations]
+     String::Utf8Value mode(GET_ARGUMENT_AS_STRING(0));
+                                                     ^
+In file included from /home/pi/.node-gyp/10.12.0/include/node/v8.h:26:0,
+                 from ../src/addon.h:4,
+                 from ../src/wiringPi.h:4,
+                 from ../src/wiringPi.cc:1:
+/home/pi/.node-gyp/10.12.0/include/node/v8.h:2892:28: note: declared here
+                   explicit Utf8Value(Local<v8::Value> obj));
+                            ^
+/home/pi/.node-gyp/10.12.0/include/node/v8config.h:324:3: note: in definition of macro ‘V8_DEPRECATED’
+   declarator __attribute__((deprecated(message)))
+   ^~~~~~~~~~
+In file included from ../src/wiringPi.h:4:0,
+                 from ../src/wiringPi.cc:1:
+../src/wiringPi.cc: In function ‘void nodemodule::pinModeAlt(const v8::FunctionCallbackInfo<v8::Value>&)’:
+../src/addon.h:205:57: warning: ‘int32_t v8::Value::Int32Value() const’ is deprecated: Use maybe version [-Wdeprecated-declarations]
+   #define GET_ARGUMENT_AS_TYPE(id, type) args[id]->type()
+                                                         ^
+../src/addon.h:207:37: note: in expansion of macro ‘GET_ARGUMENT_AS_TYPE’
+   #define GET_ARGUMENT_AS_INT32(id) GET_ARGUMENT_AS_TYPE(id, Int32Value)
+                                     ^~~~~~~~~~~~~~~~~~~~
+../src/wiringPi.cc:172:13: note: in expansion of macro ‘GET_ARGUMENT_AS_INT32’
+   int pin = GET_ARGUMENT_AS_INT32(0);
+             ^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/pi/.node-gyp/10.12.0/include/node/v8.h:26:0,
+                 from ../src/addon.h:4,
+                 from ../src/wiringPi.h:4,
+                 from ../src/wiringPi.cc:1:
+/home/pi/.node-gyp/10.12.0/include/node/v8.h:2478:46: note: declared here
+   V8_DEPRECATED("Use maybe version", int32_t Int32Value() const);
+                                              ^
+/home/pi/.node-gyp/10.12.0/include/node/v8config.h:324:3: note: in definition of macro ‘V8_DEPRECATED’
+   declarator __attribute__((deprecated(message)))
+   ^~~~~~~~~~
+In file included from ../src/wiringPi.h:4:0,
+                 from ../src/wiringPi.cc:1:
+../src/addon.h:205:57: warning: ‘int32_t v8::Value::Int32Value() const’ is deprecated: Use maybe version [-Wdeprecated-declarations]
+   #define GET_ARGUMENT_AS_TYPE(id, type) args[id]->type()
+                                                         ^
+../src/addon.h:207:37: note: in expansion of macro ‘GET_ARGUMENT_AS_TYPE’
+   #define GET_ARGUMENT_AS_INT32(id) GET_ARGUMENT_AS_TYPE(id, Int32Value)
+                                     ^~~~~~~~~~~~~~~~~~~~
+../src/wiringPi.cc:173:14: note: in expansion of macro ‘GET_ARGUMENT_AS_INT32’
+   int mode = GET_ARGUMENT_AS_INT32(1);
+              ^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/pi/.node-gyp/10.12.0/include/node/v8.h:26:0,
+                 from ../src/addon.h:4,
+                 from ../src/wiringPi.h:4,
+                 from ../src/wiringPi.cc:1:
+/home/pi/.node-gyp/10.12.0/include/node/v8.h:2478:46: note: declared here
+   V8_DEPRECATED("Use maybe version", int32_t Int32Value() const);
+                                              ^
+/home/pi/.node-gyp/10.12.0/include/node/v8config.h:324:3: note: in definition of macro ‘V8_DEPRECATED’
+   declarator __attribute__((deprecated(message)))
+   ^~~~~~~~~~
+In file included from ../src/wiringPi.h:4:0,
+                 from ../src/wiringPi.cc:1:
+../src/wiringPi.cc: In function ‘void nodemodule::pinMode(const v8::FunctionCallbackInfo<v8::Value>&)’:
+../src/addon.h:205:57: warning: ‘int32_t v8::Value::Int32Value() const’ is deprecated: Use maybe version [-Wdeprecated-declarations]
+   #define GET_ARGUMENT_AS_TYPE(id, type) args[id]->type()
+                                                         ^
+../src/addon.h:207:37: note: in expansion of macro ‘GET_ARGUMENT_AS_TYPE’
+   #define GET_ARGUMENT_AS_INT32(id) GET_ARGUMENT_AS_TYPE(id, Int32Value)
+                                     ^~~~~~~~~~~~~~~~~~~~
+../src/wiringPi.cc:200:13: note: in expansion of macro ‘GET_ARGUMENT_AS_INT32’
+   int pin = GET_ARGUMENT_AS_INT32(0);
+             ^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/pi/.node-gyp/10.12.0/include/node/v8.h:26:0,
+                 from ../src/addon.h:4,
+                 from ../src/wiringPi.h:4,
+                 from ../src/wiringPi.cc:1:
+/home/pi/.node-gyp/10.12.0/include/node/v8.h:2478:46: note: declared here
+   V8_DEPRECATED("Use maybe version", int32_t Int32Value() const);
+                                              ^
+/home/pi/.node-gyp/10.12.0/include/node/v8config.h:324:3: note: in definition of macro ‘V8_DEPRECATED’
+   declarator __attribute__((deprecated(message)))
+   ^~~~~~~~~~
+In file included from ../src/wiringPi.h:4:0,
+                 from ../src/wiringPi.cc:1:
+../src/addon.h:205:57: warning: ‘int32_t v8::Value::Int32Value() const’ is deprecated: Use maybe version [-Wdeprecated-declarations]
+   #define GET_ARGUMENT_AS_TYPE(id, type) args[id]->type()
+                                                         ^
+../src/addon.h:207:37: note: in expansion of macro ‘GET_ARGUMENT_AS_TYPE’
+   #define GET_ARGUMENT_AS_INT32(id) GET_ARGUMENT_AS_TYPE(id, Int32Value)
+                                     ^~~~~~~~~~~~~~~~~~~~
+../src/wiringPi.cc:201:14: note: in expansion of macro ‘GET_ARGUMENT_AS_INT32’
+   int mode = GET_ARGUMENT_AS_INT32(1);
+              ^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/pi/.node-gyp/10.12.0/include/node/v8.h:26:0,
+                 from ../src/addon.h:4,
+                 from ../src/wiringPi.h:4,
+                 from ../src/wiringPi.cc:1:
+/home/pi/.node-gyp/10.12.0/include/node/v8.h:2478:46: note: declared here
+   V8_DEPRECATED("Use maybe version", int32_t Int32Value() const);
+                                              ^
+/home/pi/.node-gyp/10.12.0/include/node/v8config.h:324:3: note: in definition of macro ‘V8_DEPRECATED’
+   declarator __attribute__((deprecated(message)))
+   ^~~~~~~~~~
+In file included from ../src/wiringPi.h:4:0,
+                 from ../src/wiringPi.cc:1:
+../src/wiringPi.cc: In function ‘void nodemodule::pullUpDnControl(const v8::FunctionCallbackInfo<v8::Value>&)’:
+../src/addon.h:205:57: warning: ‘int32_t v8::Value::Int32Value() const’ is deprecated: Use maybe version [-Wdeprecated-declarations]
+   #define GET_ARGUMENT_AS_TYPE(id, type) args[id]->type()
+                                                         ^
+../src/addon.h:207:37: note: in expansion of macro ‘GET_ARGUMENT_AS_TYPE’
+   #define GET_ARGUMENT_AS_INT32(id) GET_ARGUMENT_AS_TYPE(id, Int32Value)
+                                     ^~~~~~~~~~~~~~~~~~~~
+../src/wiringPi.cc:227:13: note: in expansion of macro ‘GET_ARGUMENT_AS_INT32’
+   int pin = GET_ARGUMENT_AS_INT32(0);
+             ^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/pi/.node-gyp/10.12.0/include/node/v8.h:26:0,
+                 from ../src/addon.h:4,
+                 from ../src/wiringPi.h:4,
+                 from ../src/wiringPi.cc:1:
+/home/pi/.node-gyp/10.12.0/include/node/v8.h:2478:46: note: declared here
+   V8_DEPRECATED("Use maybe version", int32_t Int32Value() const);
+                                              ^
+/home/pi/.node-gyp/10.12.0/include/node/v8config.h:324:3: note: in definition of macro ‘V8_DEPRECATED’
+   declarator __attribute__((deprecated(message)))
+   ^~~~~~~~~~
+In file included from ../src/wiringPi.h:4:0,
+                 from ../src/wiringPi.cc:1:
+../src/addon.h:205:57: warning: ‘int32_t v8::Value::Int32Value() const’ is deprecated: Use maybe version [-Wdeprecated-declarations]
+   #define GET_ARGUMENT_AS_TYPE(id, type) args[id]->type()
+                                                         ^
+../src/addon.h:207:37: note: in expansion of macro ‘GET_ARGUMENT_AS_TYPE’
+   #define GET_ARGUMENT_AS_INT32(id) GET_ARGUMENT_AS_TYPE(id, Int32Value)
+                                     ^~~~~~~~~~~~~~~~~~~~
+../src/wiringPi.cc:228:13: note: in expansion of macro ‘GET_ARGUMENT_AS_INT32’
+   int pud = GET_ARGUMENT_AS_INT32(1);
+             ^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/pi/.node-gyp/10.12.0/include/node/v8.h:26:0,
+                 from ../src/addon.h:4,
+                 from ../src/wiringPi.h:4,
+                 from ../src/wiringPi.cc:1:
+/home/pi/.node-gyp/10.12.0/include/node/v8.h:2478:46: note: declared here
+   V8_DEPRECATED("Use maybe version", int32_t Int32Value() const);
+                                              ^
+/home/pi/.node-gyp/10.12.0/include/node/v8config.h:324:3: note: in definition of macro ‘V8_DEPRECATED’
+   declarator __attribute__((deprecated(message)))
+   ^~~~~~~~~~
+In file included from ../src/wiringPi.h:4:0,
+                 from ../src/wiringPi.cc:1:
+../src/wiringPi.cc: In function ‘void nodemodule::digitalRead(const v8::FunctionCallbackInfo<v8::Value>&)’:
+../src/addon.h:205:57: warning: ‘int32_t v8::Value::Int32Value() const’ is deprecated: Use maybe version [-Wdeprecated-declarations]
+   #define GET_ARGUMENT_AS_TYPE(id, type) args[id]->type()
+                                                         ^
+../src/addon.h:207:37: note: in expansion of macro ‘GET_ARGUMENT_AS_TYPE’
+   #define GET_ARGUMENT_AS_INT32(id) GET_ARGUMENT_AS_TYPE(id, Int32Value)
+                                     ^~~~~~~~~~~~~~~~~~~~
+../src/wiringPi.cc:250:13: note: in expansion of macro ‘GET_ARGUMENT_AS_INT32’
+   int pin = GET_ARGUMENT_AS_INT32(0);
+             ^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/pi/.node-gyp/10.12.0/include/node/v8.h:26:0,
+                 from ../src/addon.h:4,
+                 from ../src/wiringPi.h:4,
+                 from ../src/wiringPi.cc:1:
+/home/pi/.node-gyp/10.12.0/include/node/v8.h:2478:46: note: declared here
+   V8_DEPRECATED("Use maybe version", int32_t Int32Value() const);
+                                              ^
+/home/pi/.node-gyp/10.12.0/include/node/v8config.h:324:3: note: in definition of macro ‘V8_DEPRECATED’
+   declarator __attribute__((deprecated(message)))
+   ^~~~~~~~~~
+In file included from ../src/wiringPi.h:4:0,
+                 from ../src/wiringPi.cc:1:
+../src/wiringPi.cc: In function ‘void nodemodule::digitalWrite(const v8::FunctionCallbackInfo<v8::Value>&)’:
+../src/addon.h:205:57: warning: ‘int32_t v8::Value::Int32Value() const’ is deprecated: Use maybe version [-Wdeprecated-declarations]
+   #define GET_ARGUMENT_AS_TYPE(id, type) args[id]->type()
+                                                         ^
+../src/addon.h:207:37: note: in expansion of macro ‘GET_ARGUMENT_AS_TYPE’
+   #define GET_ARGUMENT_AS_INT32(id) GET_ARGUMENT_AS_TYPE(id, Int32Value)
+                                     ^~~~~~~~~~~~~~~~~~~~
+../src/wiringPi.cc:277:13: note: in expansion of macro ‘GET_ARGUMENT_AS_INT32’
+   int pin = GET_ARGUMENT_AS_INT32(0);
+             ^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/pi/.node-gyp/10.12.0/include/node/v8.h:26:0,
+                 from ../src/addon.h:4,
+                 from ../src/wiringPi.h:4,
+                 from ../src/wiringPi.cc:1:
+/home/pi/.node-gyp/10.12.0/include/node/v8.h:2478:46: note: declared here
+   V8_DEPRECATED("Use maybe version", int32_t Int32Value() const);
+                                              ^
+/home/pi/.node-gyp/10.12.0/include/node/v8config.h:324:3: note: in definition of macro ‘V8_DEPRECATED’
+   declarator __attribute__((deprecated(message)))
+   ^~~~~~~~~~
+In file included from ../src/wiringPi.h:4:0,
+                 from ../src/wiringPi.cc:1:
+../src/addon.h:205:57: warning: ‘int32_t v8::Value::Int32Value() const’ is deprecated: Use maybe version [-Wdeprecated-declarations]
+   #define GET_ARGUMENT_AS_TYPE(id, type) args[id]->type()
+                                                         ^
+../src/addon.h:207:37: note: in expansion of macro ‘GET_ARGUMENT_AS_TYPE’
+   #define GET_ARGUMENT_AS_INT32(id) GET_ARGUMENT_AS_TYPE(id, Int32Value)
+                                     ^~~~~~~~~~~~~~~~~~~~
+../src/wiringPi.cc:278:15: note: in expansion of macro ‘GET_ARGUMENT_AS_INT32’
+   int state = GET_ARGUMENT_AS_INT32(1);
+               ^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/pi/.node-gyp/10.12.0/include/node/v8.h:26:0,
+                 from ../src/addon.h:4,
+                 from ../src/wiringPi.h:4,
+                 from ../src/wiringPi.cc:1:
+/home/pi/.node-gyp/10.12.0/include/node/v8.h:2478:46: note: declared here
+   V8_DEPRECATED("Use maybe version", int32_t Int32Value() const);
+                                              ^
+/home/pi/.node-gyp/10.12.0/include/node/v8config.h:324:3: note: in definition of macro ‘V8_DEPRECATED’
+   declarator __attribute__((deprecated(message)))
+   ^~~~~~~~~~
+In file included from ../src/wiringPi.h:4:0,
+                 from ../src/wiringPi.cc:1:
+../src/wiringPi.cc: In function ‘void nodemodule::pwmWrite(const v8::FunctionCallbackInfo<v8::Value>&)’:
+../src/addon.h:205:57: warning: ‘int32_t v8::Value::Int32Value() const’ is deprecated: Use maybe version [-Wdeprecated-declarations]
+   #define GET_ARGUMENT_AS_TYPE(id, type) args[id]->type()
+                                                         ^
+../src/addon.h:207:37: note: in expansion of macro ‘GET_ARGUMENT_AS_TYPE’
+   #define GET_ARGUMENT_AS_INT32(id) GET_ARGUMENT_AS_TYPE(id, Int32Value)
+                                     ^~~~~~~~~~~~~~~~~~~~
+../src/wiringPi.cc:304:13: note: in expansion of macro ‘GET_ARGUMENT_AS_INT32’
+   int pin = GET_ARGUMENT_AS_INT32(0);
+             ^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/pi/.node-gyp/10.12.0/include/node/v8.h:26:0,
+                 from ../src/addon.h:4,
+                 from ../src/wiringPi.h:4,
+                 from ../src/wiringPi.cc:1:
+/home/pi/.node-gyp/10.12.0/include/node/v8.h:2478:46: note: declared here
+   V8_DEPRECATED("Use maybe version", int32_t Int32Value() const);
+                                              ^
+/home/pi/.node-gyp/10.12.0/include/node/v8config.h:324:3: note: in definition of macro ‘V8_DEPRECATED’
+   declarator __attribute__((deprecated(message)))
+   ^~~~~~~~~~
+In file included from ../src/wiringPi.h:4:0,
+                 from ../src/wiringPi.cc:1:
+../src/addon.h:205:57: warning: ‘int32_t v8::Value::Int32Value() const’ is deprecated: Use maybe version [-Wdeprecated-declarations]
+   #define GET_ARGUMENT_AS_TYPE(id, type) args[id]->type()
+                                                         ^
+../src/addon.h:207:37: note: in expansion of macro ‘GET_ARGUMENT_AS_TYPE’
+   #define GET_ARGUMENT_AS_INT32(id) GET_ARGUMENT_AS_TYPE(id, Int32Value)
+                                     ^~~~~~~~~~~~~~~~~~~~
+../src/wiringPi.cc:305:15: note: in expansion of macro ‘GET_ARGUMENT_AS_INT32’
+   int value = GET_ARGUMENT_AS_INT32(1);
+               ^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/pi/.node-gyp/10.12.0/include/node/v8.h:26:0,
+                 from ../src/addon.h:4,
+                 from ../src/wiringPi.h:4,
+                 from ../src/wiringPi.cc:1:
+/home/pi/.node-gyp/10.12.0/include/node/v8.h:2478:46: note: declared here
+   V8_DEPRECATED("Use maybe version", int32_t Int32Value() const);
+                                              ^
+/home/pi/.node-gyp/10.12.0/include/node/v8config.h:324:3: note: in definition of macro ‘V8_DEPRECATED’
+   declarator __attribute__((deprecated(message)))
+   ^~~~~~~~~~
+In file included from ../src/wiringPi.h:4:0,
+                 from ../src/wiringPi.cc:1:
+../src/wiringPi.cc: In function ‘void nodemodule::analogRead(const v8::FunctionCallbackInfo<v8::Value>&)’:
+../src/addon.h:205:57: warning: ‘int32_t v8::Value::Int32Value() const’ is deprecated: Use maybe version [-Wdeprecated-declarations]
+   #define GET_ARGUMENT_AS_TYPE(id, type) args[id]->type()
+                                                         ^
+../src/addon.h:207:37: note: in expansion of macro ‘GET_ARGUMENT_AS_TYPE’
+   #define GET_ARGUMENT_AS_INT32(id) GET_ARGUMENT_AS_TYPE(id, Int32Value)
+                                     ^~~~~~~~~~~~~~~~~~~~
+../src/wiringPi.cc:321:13: note: in expansion of macro ‘GET_ARGUMENT_AS_INT32’
+   int pin = GET_ARGUMENT_AS_INT32(0);
+             ^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/pi/.node-gyp/10.12.0/include/node/v8.h:26:0,
+                 from ../src/addon.h:4,
+                 from ../src/wiringPi.h:4,
+                 from ../src/wiringPi.cc:1:
+/home/pi/.node-gyp/10.12.0/include/node/v8.h:2478:46: note: declared here
+   V8_DEPRECATED("Use maybe version", int32_t Int32Value() const);
+                                              ^
+/home/pi/.node-gyp/10.12.0/include/node/v8config.h:324:3: note: in definition of macro ‘V8_DEPRECATED’
+   declarator __attribute__((deprecated(message)))
+   ^~~~~~~~~~
+In file included from ../src/wiringPi.h:4:0,
+                 from ../src/wiringPi.cc:1:
+../src/wiringPi.cc: In function ‘void nodemodule::analogWrite(const v8::FunctionCallbackInfo<v8::Value>&)’:
+../src/addon.h:205:57: warning: ‘int32_t v8::Value::Int32Value() const’ is deprecated: Use maybe version [-Wdeprecated-declarations]
+   #define GET_ARGUMENT_AS_TYPE(id, type) args[id]->type()
+                                                         ^
+../src/addon.h:207:37: note: in expansion of macro ‘GET_ARGUMENT_AS_TYPE’
+   #define GET_ARGUMENT_AS_INT32(id) GET_ARGUMENT_AS_TYPE(id, Int32Value)
+                                     ^~~~~~~~~~~~~~~~~~~~
+../src/wiringPi.cc:342:13: note: in expansion of macro ‘GET_ARGUMENT_AS_INT32’
+   int pin = GET_ARGUMENT_AS_INT32(0);
+             ^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/pi/.node-gyp/10.12.0/include/node/v8.h:26:0,
+                 from ../src/addon.h:4,
+                 from ../src/wiringPi.h:4,
+                 from ../src/wiringPi.cc:1:
+/home/pi/.node-gyp/10.12.0/include/node/v8.h:2478:46: note: declared here
+   V8_DEPRECATED("Use maybe version", int32_t Int32Value() const);
+                                              ^
+/home/pi/.node-gyp/10.12.0/include/node/v8config.h:324:3: note: in definition of macro ‘V8_DEPRECATED’
+   declarator __attribute__((deprecated(message)))
+   ^~~~~~~~~~
+In file included from ../src/wiringPi.h:4:0,
+                 from ../src/wiringPi.cc:1:
+../src/addon.h:205:57: warning: ‘int32_t v8::Value::Int32Value() const’ is deprecated: Use maybe version [-Wdeprecated-declarations]
+   #define GET_ARGUMENT_AS_TYPE(id, type) args[id]->type()
+                                                         ^
+../src/addon.h:207:37: note: in expansion of macro ‘GET_ARGUMENT_AS_TYPE’
+   #define GET_ARGUMENT_AS_INT32(id) GET_ARGUMENT_AS_TYPE(id, Int32Value)
+                                     ^~~~~~~~~~~~~~~~~~~~
+../src/wiringPi.cc:343:15: note: in expansion of macro ‘GET_ARGUMENT_AS_INT32’
+   int value = GET_ARGUMENT_AS_INT32(1);
+               ^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/pi/.node-gyp/10.12.0/include/node/v8.h:26:0,
+                 from ../src/addon.h:4,
+                 from ../src/wiringPi.h:4,
+                 from ../src/wiringPi.cc:1:
+/home/pi/.node-gyp/10.12.0/include/node/v8.h:2478:46: note: declared here
+   V8_DEPRECATED("Use maybe version", int32_t Int32Value() const);
+                                              ^
+/home/pi/.node-gyp/10.12.0/include/node/v8config.h:324:3: note: in definition of macro ‘V8_DEPRECATED’
+   declarator __attribute__((deprecated(message)))
+   ^~~~~~~~~~
+In file included from ../src/wiringPi.h:4:0,
+                 from ../src/wiringPi.cc:1:
+../src/wiringPi.cc: In function ‘void nodemodule::pulseIn(const v8::FunctionCallbackInfo<v8::Value>&)’:
+../src/addon.h:205:57: warning: ‘int32_t v8::Value::Int32Value() const’ is deprecated: Use maybe version [-Wdeprecated-declarations]
+   #define GET_ARGUMENT_AS_TYPE(id, type) args[id]->type()
+                                                         ^
+../src/addon.h:207:37: note: in expansion of macro ‘GET_ARGUMENT_AS_TYPE’
+   #define GET_ARGUMENT_AS_INT32(id) GET_ARGUMENT_AS_TYPE(id, Int32Value)
+                                     ^~~~~~~~~~~~~~~~~~~~
+../src/wiringPi.cc:361:13: note: in expansion of macro ‘GET_ARGUMENT_AS_INT32’
+   int pin = GET_ARGUMENT_AS_INT32(0);
+             ^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/pi/.node-gyp/10.12.0/include/node/v8.h:26:0,
+                 from ../src/addon.h:4,
+                 from ../src/wiringPi.h:4,
+                 from ../src/wiringPi.cc:1:
+/home/pi/.node-gyp/10.12.0/include/node/v8.h:2478:46: note: declared here
+   V8_DEPRECATED("Use maybe version", int32_t Int32Value() const);
+                                              ^
+/home/pi/.node-gyp/10.12.0/include/node/v8config.h:324:3: note: in definition of macro ‘V8_DEPRECATED’
+   declarator __attribute__((deprecated(message)))
+   ^~~~~~~~~~
+In file included from ../src/wiringPi.h:4:0,
+                 from ../src/wiringPi.cc:1:
+../src/addon.h:205:57: warning: ‘int32_t v8::Value::Int32Value() const’ is deprecated: Use maybe version [-Wdeprecated-declarations]
+   #define GET_ARGUMENT_AS_TYPE(id, type) args[id]->type()
+                                                         ^
+../src/addon.h:207:37: note: in expansion of macro ‘GET_ARGUMENT_AS_TYPE’
+   #define GET_ARGUMENT_AS_INT32(id) GET_ARGUMENT_AS_TYPE(id, Int32Value)
+                                     ^~~~~~~~~~~~~~~~~~~~
+../src/wiringPi.cc:362:15: note: in expansion of macro ‘GET_ARGUMENT_AS_INT32’
+   int state = GET_ARGUMENT_AS_INT32(1);
+               ^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/pi/.node-gyp/10.12.0/include/node/v8.h:26:0,
+                 from ../src/addon.h:4,
+                 from ../src/wiringPi.h:4,
+                 from ../src/wiringPi.cc:1:
+/home/pi/.node-gyp/10.12.0/include/node/v8.h:2478:46: note: declared here
+   V8_DEPRECATED("Use maybe version", int32_t Int32Value() const);
+                                              ^
+/home/pi/.node-gyp/10.12.0/include/node/v8config.h:324:3: note: in definition of macro ‘V8_DEPRECATED’
+   declarator __attribute__((deprecated(message)))
+   ^~~~~~~~~~
+In file included from ../src/wiringPi.h:4:0,
+                 from ../src/wiringPi.cc:1:
+../src/wiringPi.cc: In function ‘void nodemodule::delay(const v8::FunctionCallbackInfo<v8::Value>&)’:
+../src/addon.h:205:57: warning: ‘int32_t v8::Value::Int32Value() const’ is deprecated: Use maybe version [-Wdeprecated-declarations]
+   #define GET_ARGUMENT_AS_TYPE(id, type) args[id]->type()
+                                                         ^
+../src/addon.h:207:37: note: in expansion of macro ‘GET_ARGUMENT_AS_TYPE’
+   #define GET_ARGUMENT_AS_INT32(id) GET_ARGUMENT_AS_TYPE(id, Int32Value)
+                                     ^~~~~~~~~~~~~~~~~~~~
+../src/wiringPi.cc:380:12: note: in expansion of macro ‘GET_ARGUMENT_AS_INT32’
+   int ms = GET_ARGUMENT_AS_INT32(0);
+            ^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/pi/.node-gyp/10.12.0/include/node/v8.h:26:0,
+                 from ../src/addon.h:4,
+                 from ../src/wiringPi.h:4,
+                 from ../src/wiringPi.cc:1:
+/home/pi/.node-gyp/10.12.0/include/node/v8.h:2478:46: note: declared here
+   V8_DEPRECATED("Use maybe version", int32_t Int32Value() const);
+                                              ^
+/home/pi/.node-gyp/10.12.0/include/node/v8config.h:324:3: note: in definition of macro ‘V8_DEPRECATED’
+   declarator __attribute__((deprecated(message)))
+   ^~~~~~~~~~
+In file included from ../src/wiringPi.h:4:0,
+                 from ../src/wiringPi.cc:1:
+../src/wiringPi.cc: In function ‘void nodemodule::delayMicroseconds(const v8::FunctionCallbackInfo<v8::Value>&)’:
+../src/addon.h:205:57: warning: ‘int32_t v8::Value::Int32Value() const’ is deprecated: Use maybe version [-Wdeprecated-declarations]
+   #define GET_ARGUMENT_AS_TYPE(id, type) args[id]->type()
+                                                         ^
+../src/addon.h:207:37: note: in expansion of macro ‘GET_ARGUMENT_AS_TYPE’
+   #define GET_ARGUMENT_AS_INT32(id) GET_ARGUMENT_AS_TYPE(id, Int32Value)
+                                     ^~~~~~~~~~~~~~~~~~~~
+../src/wiringPi.cc:396:12: note: in expansion of macro ‘GET_ARGUMENT_AS_INT32’
+   int us = GET_ARGUMENT_AS_INT32(0);
+            ^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/pi/.node-gyp/10.12.0/include/node/v8.h:26:0,
+                 from ../src/addon.h:4,
+                 from ../src/wiringPi.h:4,
+                 from ../src/wiringPi.cc:1:
+/home/pi/.node-gyp/10.12.0/include/node/v8.h:2478:46: note: declared here
+   V8_DEPRECATED("Use maybe version", int32_t Int32Value() const);
+                                              ^
+/home/pi/.node-gyp/10.12.0/include/node/v8config.h:324:3: note: in definition of macro ‘V8_DEPRECATED’
+   declarator __attribute__((deprecated(message)))
+   ^~~~~~~~~~
+In file included from ../src/wiringPi.h:4:0,
+                 from ../src/wiringPi.cc:1:
+../src/wiringPi.cc: In function ‘void nodemodule::wpiPinToGpio(const v8::FunctionCallbackInfo<v8::Value>&)’:
+../src/addon.h:205:57: warning: ‘int32_t v8::Value::Int32Value() const’ is deprecated: Use maybe version [-Wdeprecated-declarations]
+   #define GET_ARGUMENT_AS_TYPE(id, type) args[id]->type()
+                                                         ^
+../src/addon.h:207:37: note: in expansion of macro ‘GET_ARGUMENT_AS_TYPE’
+   #define GET_ARGUMENT_AS_INT32(id) GET_ARGUMENT_AS_TYPE(id, Int32Value)
+                                     ^~~~~~~~~~~~~~~~~~~~
+../src/wiringPi.cc:484:13: note: in expansion of macro ‘GET_ARGUMENT_AS_INT32’
+   int pin = GET_ARGUMENT_AS_INT32(0);
+             ^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/pi/.node-gyp/10.12.0/include/node/v8.h:26:0,
+                 from ../src/addon.h:4,
+                 from ../src/wiringPi.h:4,
+                 from ../src/wiringPi.cc:1:
+/home/pi/.node-gyp/10.12.0/include/node/v8.h:2478:46: note: declared here
+   V8_DEPRECATED("Use maybe version", int32_t Int32Value() const);
+                                              ^
+/home/pi/.node-gyp/10.12.0/include/node/v8config.h:324:3: note: in definition of macro ‘V8_DEPRECATED’
+   declarator __attribute__((deprecated(message)))
+   ^~~~~~~~~~
+In file included from ../src/wiringPi.h:4:0,
+                 from ../src/wiringPi.cc:1:
+../src/wiringPi.cc: In function ‘void nodemodule::physPinToGpio(const v8::FunctionCallbackInfo<v8::Value>&)’:
+../src/addon.h:205:57: warning: ‘int32_t v8::Value::Int32Value() const’ is deprecated: Use maybe version [-Wdeprecated-declarations]
+   #define GET_ARGUMENT_AS_TYPE(id, type) args[id]->type()
+                                                         ^
+../src/addon.h:207:37: note: in expansion of macro ‘GET_ARGUMENT_AS_TYPE’
+   #define GET_ARGUMENT_AS_INT32(id) GET_ARGUMENT_AS_TYPE(id, Int32Value)
+                                     ^~~~~~~~~~~~~~~~~~~~
+../src/wiringPi.cc:502:13: note: in expansion of macro ‘GET_ARGUMENT_AS_INT32’
+   int pin = GET_ARGUMENT_AS_INT32(0);
+             ^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/pi/.node-gyp/10.12.0/include/node/v8.h:26:0,
+                 from ../src/addon.h:4,
+                 from ../src/wiringPi.h:4,
+                 from ../src/wiringPi.cc:1:
+/home/pi/.node-gyp/10.12.0/include/node/v8.h:2478:46: note: declared here
+   V8_DEPRECATED("Use maybe version", int32_t Int32Value() const);
+                                              ^
+/home/pi/.node-gyp/10.12.0/include/node/v8config.h:324:3: note: in definition of macro ‘V8_DEPRECATED’
+   declarator __attribute__((deprecated(message)))
+   ^~~~~~~~~~
+In file included from ../src/wiringPi.h:4:0,
+                 from ../src/wiringPi.cc:1:
+../src/wiringPi.cc: In function ‘void nodemodule::setPadDrive(const v8::FunctionCallbackInfo<v8::Value>&)’:
+../src/addon.h:205:57: warning: ‘int32_t v8::Value::Int32Value() const’ is deprecated: Use maybe version [-Wdeprecated-declarations]
+   #define GET_ARGUMENT_AS_TYPE(id, type) args[id]->type()
+                                                         ^
+../src/addon.h:207:37: note: in expansion of macro ‘GET_ARGUMENT_AS_TYPE’
+   #define GET_ARGUMENT_AS_INT32(id) GET_ARGUMENT_AS_TYPE(id, Int32Value)
+                                     ^~~~~~~~~~~~~~~~~~~~
+../src/wiringPi.cc:524:15: note: in expansion of macro ‘GET_ARGUMENT_AS_INT32’
+   int group = GET_ARGUMENT_AS_INT32(0);
+               ^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/pi/.node-gyp/10.12.0/include/node/v8.h:26:0,
+                 from ../src/addon.h:4,
+                 from ../src/wiringPi.h:4,
+                 from ../src/wiringPi.cc:1:
+/home/pi/.node-gyp/10.12.0/include/node/v8.h:2478:46: note: declared here
+   V8_DEPRECATED("Use maybe version", int32_t Int32Value() const);
+                                              ^
+/home/pi/.node-gyp/10.12.0/include/node/v8config.h:324:3: note: in definition of macro ‘V8_DEPRECATED’
+   declarator __attribute__((deprecated(message)))
+   ^~~~~~~~~~
+In file included from ../src/wiringPi.h:4:0,
+                 from ../src/wiringPi.cc:1:
+../src/addon.h:205:57: warning: ‘int32_t v8::Value::Int32Value() const’ is deprecated: Use maybe version [-Wdeprecated-declarations]
+   #define GET_ARGUMENT_AS_TYPE(id, type) args[id]->type()
+                                                         ^
+../src/addon.h:207:37: note: in expansion of macro ‘GET_ARGUMENT_AS_TYPE’
+   #define GET_ARGUMENT_AS_INT32(id) GET_ARGUMENT_AS_TYPE(id, Int32Value)
+                                     ^~~~~~~~~~~~~~~~~~~~
+../src/wiringPi.cc:525:15: note: in expansion of macro ‘GET_ARGUMENT_AS_INT32’
+   int value = GET_ARGUMENT_AS_INT32(1);
+               ^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/pi/.node-gyp/10.12.0/include/node/v8.h:26:0,
+                 from ../src/addon.h:4,
+                 from ../src/wiringPi.h:4,
+                 from ../src/wiringPi.cc:1:
+/home/pi/.node-gyp/10.12.0/include/node/v8.h:2478:46: note: declared here
+   V8_DEPRECATED("Use maybe version", int32_t Int32Value() const);
+                                              ^
+/home/pi/.node-gyp/10.12.0/include/node/v8config.h:324:3: note: in definition of macro ‘V8_DEPRECATED’
+   declarator __attribute__((deprecated(message)))
+   ^~~~~~~~~~
+In file included from ../src/wiringPi.h:4:0,
+                 from ../src/wiringPi.cc:1:
+../src/wiringPi.cc: In function ‘void nodemodule::getAlt(const v8::FunctionCallbackInfo<v8::Value>&)’:
+../src/addon.h:205:57: warning: ‘int32_t v8::Value::Int32Value() const’ is deprecated: Use maybe version [-Wdeprecated-declarations]
+   #define GET_ARGUMENT_AS_TYPE(id, type) args[id]->type()
+                                                         ^
+../src/addon.h:207:37: note: in expansion of macro ‘GET_ARGUMENT_AS_TYPE’
+   #define GET_ARGUMENT_AS_INT32(id) GET_ARGUMENT_AS_TYPE(id, Int32Value)
+                                     ^~~~~~~~~~~~~~~~~~~~
+../src/wiringPi.cc:545:13: note: in expansion of macro ‘GET_ARGUMENT_AS_INT32’
+   int pin = GET_ARGUMENT_AS_INT32(0);
+             ^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/pi/.node-gyp/10.12.0/include/node/v8.h:26:0,
+                 from ../src/addon.h:4,
+                 from ../src/wiringPi.h:4,
+                 from ../src/wiringPi.cc:1:
+/home/pi/.node-gyp/10.12.0/include/node/v8.h:2478:46: note: declared here
+   V8_DEPRECATED("Use maybe version", int32_t Int32Value() const);
+                                              ^
+/home/pi/.node-gyp/10.12.0/include/node/v8config.h:324:3: note: in definition of macro ‘V8_DEPRECATED’
+   declarator __attribute__((deprecated(message)))
+   ^~~~~~~~~~
+In file included from ../src/wiringPi.h:4:0,
+                 from ../src/wiringPi.cc:1:
+../src/wiringPi.cc: In function ‘void nodemodule::pwmToneWrite(const v8::FunctionCallbackInfo<v8::Value>&)’:
+../src/addon.h:205:57: warning: ‘int32_t v8::Value::Int32Value() const’ is deprecated: Use maybe version [-Wdeprecated-declarations]
+   #define GET_ARGUMENT_AS_TYPE(id, type) args[id]->type()
+                                                         ^
+../src/addon.h:207:37: note: in expansion of macro ‘GET_ARGUMENT_AS_TYPE’
+   #define GET_ARGUMENT_AS_INT32(id) GET_ARGUMENT_AS_TYPE(id, Int32Value)
+                                     ^~~~~~~~~~~~~~~~~~~~
+../src/wiringPi.cc:562:13: note: in expansion of macro ‘GET_ARGUMENT_AS_INT32’
+   int pin = GET_ARGUMENT_AS_INT32(0);
+             ^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/pi/.node-gyp/10.12.0/include/node/v8.h:26:0,
+                 from ../src/addon.h:4,
+                 from ../src/wiringPi.h:4,
+                 from ../src/wiringPi.cc:1:
+/home/pi/.node-gyp/10.12.0/include/node/v8.h:2478:46: note: declared here
+   V8_DEPRECATED("Use maybe version", int32_t Int32Value() const);
+                                              ^
+/home/pi/.node-gyp/10.12.0/include/node/v8config.h:324:3: note: in definition of macro ‘V8_DEPRECATED’
+   declarator __attribute__((deprecated(message)))
+   ^~~~~~~~~~
+In file included from ../src/wiringPi.h:4:0,
+                 from ../src/wiringPi.cc:1:
+../src/addon.h:205:57: warning: ‘int32_t v8::Value::Int32Value() const’ is deprecated: Use maybe version [-Wdeprecated-declarations]
+   #define GET_ARGUMENT_AS_TYPE(id, type) args[id]->type()
+                                                         ^
+../src/addon.h:207:37: note: in expansion of macro ‘GET_ARGUMENT_AS_TYPE’
+   #define GET_ARGUMENT_AS_INT32(id) GET_ARGUMENT_AS_TYPE(id, Int32Value)
+                                     ^~~~~~~~~~~~~~~~~~~~
+../src/wiringPi.cc:563:19: note: in expansion of macro ‘GET_ARGUMENT_AS_INT32’
+   int frequency = GET_ARGUMENT_AS_INT32(1);
+                   ^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/pi/.node-gyp/10.12.0/include/node/v8.h:26:0,
+                 from ../src/addon.h:4,
+                 from ../src/wiringPi.h:4,
+                 from ../src/wiringPi.cc:1:
+/home/pi/.node-gyp/10.12.0/include/node/v8.h:2478:46: note: declared here
+   V8_DEPRECATED("Use maybe version", int32_t Int32Value() const);
+                                              ^
+/home/pi/.node-gyp/10.12.0/include/node/v8config.h:324:3: note: in definition of macro ‘V8_DEPRECATED’
+   declarator __attribute__((deprecated(message)))
+   ^~~~~~~~~~
+In file included from ../src/wiringPi.h:4:0,
+                 from ../src/wiringPi.cc:1:
+../src/wiringPi.cc: In function ‘void nodemodule::digitalWriteByte(const v8::FunctionCallbackInfo<v8::Value>&)’:
+../src/addon.h:205:57: warning: ‘int32_t v8::Value::Int32Value() const’ is deprecated: Use maybe version [-Wdeprecated-declarations]
+   #define GET_ARGUMENT_AS_TYPE(id, type) args[id]->type()
+                                                         ^
+../src/addon.h:207:37: note: in expansion of macro ‘GET_ARGUMENT_AS_TYPE’
+   #define GET_ARGUMENT_AS_INT32(id) GET_ARGUMENT_AS_TYPE(id, Int32Value)
+                                     ^~~~~~~~~~~~~~~~~~~~
+../src/wiringPi.cc:584:14: note: in expansion of macro ‘GET_ARGUMENT_AS_INT32’
+   int byte = GET_ARGUMENT_AS_INT32(0);
+              ^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/pi/.node-gyp/10.12.0/include/node/v8.h:26:0,
+                 from ../src/addon.h:4,
+                 from ../src/wiringPi.h:4,
+                 from ../src/wiringPi.cc:1:
+/home/pi/.node-gyp/10.12.0/include/node/v8.h:2478:46: note: declared here
+   V8_DEPRECATED("Use maybe version", int32_t Int32Value() const);
+                                              ^
+/home/pi/.node-gyp/10.12.0/include/node/v8config.h:324:3: note: in definition of macro ‘V8_DEPRECATED’
+   declarator __attribute__((deprecated(message)))
+   ^~~~~~~~~~
+In file included from ../src/wiringPi.h:4:0,
+                 from ../src/wiringPi.cc:1:
+../src/wiringPi.cc: In function ‘void nodemodule::pwmSetMode(const v8::FunctionCallbackInfo<v8::Value>&)’:
+../src/addon.h:205:57: warning: ‘int32_t v8::Value::Int32Value() const’ is deprecated: Use maybe version [-Wdeprecated-declarations]
+   #define GET_ARGUMENT_AS_TYPE(id, type) args[id]->type()
+                                                         ^
+../src/addon.h:207:37: note: in expansion of macro ‘GET_ARGUMENT_AS_TYPE’
+   #define GET_ARGUMENT_AS_INT32(id) GET_ARGUMENT_AS_TYPE(id, Int32Value)
+                                     ^~~~~~~~~~~~~~~~~~~~
+../src/wiringPi.cc:604:14: note: in expansion of macro ‘GET_ARGUMENT_AS_INT32’
+   int mode = GET_ARGUMENT_AS_INT32(0);
+              ^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/pi/.node-gyp/10.12.0/include/node/v8.h:26:0,
+                 from ../src/addon.h:4,
+                 from ../src/wiringPi.h:4,
+                 from ../src/wiringPi.cc:1:
+/home/pi/.node-gyp/10.12.0/include/node/v8.h:2478:46: note: declared here
+   V8_DEPRECATED("Use maybe version", int32_t Int32Value() const);
+                                              ^
+/home/pi/.node-gyp/10.12.0/include/node/v8config.h:324:3: note: in definition of macro ‘V8_DEPRECATED’
+   declarator __attribute__((deprecated(message)))
+   ^~~~~~~~~~
+In file included from ../src/wiringPi.h:4:0,
+                 from ../src/wiringPi.cc:1:
+../src/wiringPi.cc: In function ‘void nodemodule::pwmSetRange(const v8::FunctionCallbackInfo<v8::Value>&)’:
+../src/addon.h:205:57: warning: ‘uint32_t v8::Value::Uint32Value() const’ is deprecated: Use maybe version [-Wdeprecated-declarations]
+   #define GET_ARGUMENT_AS_TYPE(id, type) args[id]->type()
+                                                         ^
+../src/addon.h:208:38: note: in expansion of macro ‘GET_ARGUMENT_AS_TYPE’
+   #define GET_ARGUMENT_AS_UINT32(id) GET_ARGUMENT_AS_TYPE(id, Uint32Value)
+                                      ^~~~~~~~~~~~~~~~~~~~
+../src/wiringPi.cc:627:24: note: in expansion of macro ‘GET_ARGUMENT_AS_UINT32’
+   unsigned int range = GET_ARGUMENT_AS_UINT32(0);
+                        ^~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/pi/.node-gyp/10.12.0/include/node/v8.h:26:0,
+                 from ../src/addon.h:4,
+                 from ../src/wiringPi.h:4,
+                 from ../src/wiringPi.cc:1:
+/home/pi/.node-gyp/10.12.0/include/node/v8.h:2477:47: note: declared here
+   V8_DEPRECATED("Use maybe version", uint32_t Uint32Value() const);
+                                               ^
+/home/pi/.node-gyp/10.12.0/include/node/v8config.h:324:3: note: in definition of macro ‘V8_DEPRECATED’
+   declarator __attribute__((deprecated(message)))
+   ^~~~~~~~~~
+In file included from ../src/wiringPi.h:4:0,
+                 from ../src/wiringPi.cc:1:
+../src/wiringPi.cc: In function ‘void nodemodule::pwmSetClock(const v8::FunctionCallbackInfo<v8::Value>&)’:
+../src/addon.h:205:57: warning: ‘int32_t v8::Value::Int32Value() const’ is deprecated: Use maybe version [-Wdeprecated-declarations]
+   #define GET_ARGUMENT_AS_TYPE(id, type) args[id]->type()
+                                                         ^
+../src/addon.h:207:37: note: in expansion of macro ‘GET_ARGUMENT_AS_TYPE’
+   #define GET_ARGUMENT_AS_INT32(id) GET_ARGUMENT_AS_TYPE(id, Int32Value)
+                                     ^~~~~~~~~~~~~~~~~~~~
+../src/wiringPi.cc:647:17: note: in expansion of macro ‘GET_ARGUMENT_AS_INT32’
+   int divisor = GET_ARGUMENT_AS_INT32(0);
+                 ^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/pi/.node-gyp/10.12.0/include/node/v8.h:26:0,
+                 from ../src/addon.h:4,
+                 from ../src/wiringPi.h:4,
+                 from ../src/wiringPi.cc:1:
+/home/pi/.node-gyp/10.12.0/include/node/v8.h:2478:46: note: declared here
+   V8_DEPRECATED("Use maybe version", int32_t Int32Value() const);
+                                              ^
+/home/pi/.node-gyp/10.12.0/include/node/v8config.h:324:3: note: in definition of macro ‘V8_DEPRECATED’
+   declarator __attribute__((deprecated(message)))
+   ^~~~~~~~~~
+In file included from ../src/wiringPi.h:4:0,
+                 from ../src/wiringPi.cc:1:
+../src/wiringPi.cc: In function ‘void nodemodule::gpioClockSet(const v8::FunctionCallbackInfo<v8::Value>&)’:
+../src/addon.h:205:57: warning: ‘int32_t v8::Value::Int32Value() const’ is deprecated: Use maybe version [-Wdeprecated-declarations]
+   #define GET_ARGUMENT_AS_TYPE(id, type) args[id]->type()
+                                                         ^
+../src/addon.h:207:37: note: in expansion of macro ‘GET_ARGUMENT_AS_TYPE’
+   #define GET_ARGUMENT_AS_INT32(id) GET_ARGUMENT_AS_TYPE(id, Int32Value)
+                                     ^~~~~~~~~~~~~~~~~~~~
+../src/wiringPi.cc:667:13: note: in expansion of macro ‘GET_ARGUMENT_AS_INT32’
+   int pin = GET_ARGUMENT_AS_INT32(0);
+             ^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/pi/.node-gyp/10.12.0/include/node/v8.h:26:0,
+                 from ../src/addon.h:4,
+                 from ../src/wiringPi.h:4,
+                 from ../src/wiringPi.cc:1:
+/home/pi/.node-gyp/10.12.0/include/node/v8.h:2478:46: note: declared here
+   V8_DEPRECATED("Use maybe version", int32_t Int32Value() const);
+                                              ^
+/home/pi/.node-gyp/10.12.0/include/node/v8config.h:324:3: note: in definition of macro ‘V8_DEPRECATED’
+   declarator __attribute__((deprecated(message)))
+   ^~~~~~~~~~
+In file included from ../src/wiringPi.h:4:0,
+                 from ../src/wiringPi.cc:1:
+../src/addon.h:205:57: warning: ‘int32_t v8::Value::Int32Value() const’ is deprecated: Use maybe version [-Wdeprecated-declarations]
+   #define GET_ARGUMENT_AS_TYPE(id, type) args[id]->type()
+                                                         ^
+../src/addon.h:207:37: note: in expansion of macro ‘GET_ARGUMENT_AS_TYPE’
+   #define GET_ARGUMENT_AS_INT32(id) GET_ARGUMENT_AS_TYPE(id, Int32Value)
+                                     ^~~~~~~~~~~~~~~~~~~~
+../src/wiringPi.cc:668:19: note: in expansion of macro ‘GET_ARGUMENT_AS_INT32’
+   int frequency = GET_ARGUMENT_AS_INT32(1);
+                   ^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/pi/.node-gyp/10.12.0/include/node/v8.h:26:0,
+                 from ../src/addon.h:4,
+                 from ../src/wiringPi.h:4,
+                 from ../src/wiringPi.cc:1:
+/home/pi/.node-gyp/10.12.0/include/node/v8.h:2478:46: note: declared here
+   V8_DEPRECATED("Use maybe version", int32_t Int32Value() const);
+                                              ^
+/home/pi/.node-gyp/10.12.0/include/node/v8config.h:324:3: note: in definition of macro ‘V8_DEPRECATED’
+   declarator __attribute__((deprecated(message)))
+   ^~~~~~~~~~
+In file included from ../src/wiringPi.h:4:0,
+                 from ../src/wiringPi.cc:1:
+../src/wiringPi.cc: In function ‘void nodemodule::initwiringPi(v8::Isolate*, v8::Handle<v8::Object>)’:
+../src/addon.h:45:15: error: ‘class v8::Object’ has no member named ‘ForceSet’
+       target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+               ^
+../src/wiringPi.cc:714:3: note: in expansion of macro ‘EXPORT_CONSTANT_INT’
+   EXPORT_CONSTANT_INT(WPI_MODE_PINS);
+   ^~~~~~~~~~~~~~~~~~~
+../src/addon.h:45:15: error: ‘class v8::Object’ has no member named ‘ForceSet’
+       target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+               ^
+../src/wiringPi.cc:715:3: note: in expansion of macro ‘EXPORT_CONSTANT_INT’
+   EXPORT_CONSTANT_INT(WPI_MODE_PHYS);
+   ^~~~~~~~~~~~~~~~~~~
+../src/addon.h:45:15: error: ‘class v8::Object’ has no member named ‘ForceSet’
+       target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+               ^
+../src/wiringPi.cc:716:3: note: in expansion of macro ‘EXPORT_CONSTANT_INT’
+   EXPORT_CONSTANT_INT(WPI_MODE_GPIO);
+   ^~~~~~~~~~~~~~~~~~~
+../src/addon.h:45:15: error: ‘class v8::Object’ has no member named ‘ForceSet’
+       target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+               ^
+../src/wiringPi.cc:719:3: note: in expansion of macro ‘EXPORT_CONSTANT_INT’
+   EXPORT_CONSTANT_INT(INPUT);
+   ^~~~~~~~~~~~~~~~~~~
+../src/addon.h:45:15: error: ‘class v8::Object’ has no member named ‘ForceSet’
+       target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+               ^
+../src/wiringPi.cc:720:3: note: in expansion of macro ‘EXPORT_CONSTANT_INT’
+   EXPORT_CONSTANT_INT(OUTPUT);
+   ^~~~~~~~~~~~~~~~~~~
+../src/addon.h:45:15: error: ‘class v8::Object’ has no member named ‘ForceSet’
+       target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+               ^
+../src/wiringPi.cc:721:3: note: in expansion of macro ‘EXPORT_CONSTANT_INT’
+   EXPORT_CONSTANT_INT(PWM_OUTPUT);
+   ^~~~~~~~~~~~~~~~~~~
+../src/addon.h:45:15: error: ‘class v8::Object’ has no member named ‘ForceSet’
+       target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+               ^
+../src/wiringPi.cc:722:3: note: in expansion of macro ‘EXPORT_CONSTANT_INT’
+   EXPORT_CONSTANT_INT(GPIO_CLOCK);
+   ^~~~~~~~~~~~~~~~~~~
+../src/addon.h:45:15: error: ‘class v8::Object’ has no member named ‘ForceSet’
+       target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+               ^
+../src/wiringPi.cc:723:3: note: in expansion of macro ‘EXPORT_CONSTANT_INT’
+   EXPORT_CONSTANT_INT(SOFT_PWM_OUTPUT);
+   ^~~~~~~~~~~~~~~~~~~
+../src/addon.h:45:15: error: ‘class v8::Object’ has no member named ‘ForceSet’
+       target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+               ^
+../src/wiringPi.cc:724:3: note: in expansion of macro ‘EXPORT_CONSTANT_INT’
+   EXPORT_CONSTANT_INT(SOFT_TONE_OUTPUT);
+   ^~~~~~~~~~~~~~~~~~~
+../src/addon.h:45:15: error: ‘class v8::Object’ has no member named ‘ForceSet’
+       target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+               ^
+../src/wiringPi.cc:727:3: note: in expansion of macro ‘EXPORT_CONSTANT_INT’
+   EXPORT_CONSTANT_INT(PUD_OFF);
+   ^~~~~~~~~~~~~~~~~~~
+../src/addon.h:45:15: error: ‘class v8::Object’ has no member named ‘ForceSet’
+       target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+               ^
+../src/wiringPi.cc:728:3: note: in expansion of macro ‘EXPORT_CONSTANT_INT’
+   EXPORT_CONSTANT_INT(PUD_DOWN);
+   ^~~~~~~~~~~~~~~~~~~
+../src/addon.h:45:15: error: ‘class v8::Object’ has no member named ‘ForceSet’
+       target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+               ^
+../src/wiringPi.cc:729:3: note: in expansion of macro ‘EXPORT_CONSTANT_INT’
+   EXPORT_CONSTANT_INT(PUD_UP);
+   ^~~~~~~~~~~~~~~~~~~
+../src/addon.h:45:15: error: ‘class v8::Object’ has no member named ‘ForceSet’
+       target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+               ^
+../src/wiringPi.cc:732:3: note: in expansion of macro ‘EXPORT_CONSTANT_INT’
+   EXPORT_CONSTANT_INT(HIGH);
+   ^~~~~~~~~~~~~~~~~~~
+../src/addon.h:45:15: error: ‘class v8::Object’ has no member named ‘ForceSet’
+       target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+               ^
+../src/wiringPi.cc:733:3: note: in expansion of macro ‘EXPORT_CONSTANT_INT’
+   EXPORT_CONSTANT_INT(LOW);
+   ^~~~~~~~~~~~~~~~~~~
+../src/addon.h:45:15: error: ‘class v8::Object’ has no member named ‘ForceSet’
+       target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+               ^
+../src/wiringPi.cc:736:3: note: in expansion of macro ‘EXPORT_CONSTANT_INT’
+   EXPORT_CONSTANT_INT(PWM_MODE_BAL);
+   ^~~~~~~~~~~~~~~~~~~
+../src/addon.h:45:15: error: ‘class v8::Object’ has no member named ‘ForceSet’
+       target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+               ^
+../src/wiringPi.cc:737:3: note: in expansion of macro ‘EXPORT_CONSTANT_INT’
+   EXPORT_CONSTANT_INT(PWM_MODE_MS);
+   ^~~~~~~~~~~~~~~~~~~
+../src/addon.h:45:15: error: ‘class v8::Object’ has no member named ‘ForceSet’
+       target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+               ^
+../src/wiringPi.cc:739:3: note: in expansion of macro ‘EXPORT_CONSTANT_INT’
+   EXPORT_CONSTANT_INT(PI_MODEL_UNKNOWN);
+   ^~~~~~~~~~~~~~~~~~~
+../src/addon.h:45:15: error: ‘class v8::Object’ has no member named ‘ForceSet’
+       target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+               ^
+../src/wiringPi.cc:740:3: note: in expansion of macro ‘EXPORT_CONSTANT_INT’
+   EXPORT_CONSTANT_INT(PI_MODEL_A);
+   ^~~~~~~~~~~~~~~~~~~
+../src/addon.h:45:15: error: ‘class v8::Object’ has no member named ‘ForceSet’
+       target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+               ^
+../src/wiringPi.cc:741:3: note: in expansion of macro ‘EXPORT_CONSTANT_INT’
+   EXPORT_CONSTANT_INT(PI_MODEL_B);
+   ^~~~~~~~~~~~~~~~~~~
+../src/addon.h:45:15: error: ‘class v8::Object’ has no member named ‘ForceSet’
+       target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+               ^
+../src/wiringPi.cc:742:3: note: in expansion of macro ‘EXPORT_CONSTANT_INT’
+   EXPORT_CONSTANT_INT(PI_MODEL_BP);
+   ^~~~~~~~~~~~~~~~~~~
+../src/addon.h:45:15: error: ‘class v8::Object’ has no member named ‘ForceSet’
+       target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+               ^
+../src/wiringPi.cc:743:3: note: in expansion of macro ‘EXPORT_CONSTANT_INT’
+   EXPORT_CONSTANT_INT(PI_MODEL_CM);
+   ^~~~~~~~~~~~~~~~~~~
+../src/addon.h:45:15: error: ‘class v8::Object’ has no member named ‘ForceSet’
+       target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+               ^
+../src/wiringPi.cc:744:3: note: in expansion of macro ‘EXPORT_CONSTANT_INT’
+   EXPORT_CONSTANT_INT(PI_MODEL_AP);
+   ^~~~~~~~~~~~~~~~~~~
+../src/addon.h:45:15: error: ‘class v8::Object’ has no member named ‘ForceSet’
+       target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+               ^
+../src/wiringPi.cc:745:3: note: in expansion of macro ‘EXPORT_CONSTANT_INT’
+   EXPORT_CONSTANT_INT(PI_MODEL_2);
+   ^~~~~~~~~~~~~~~~~~~
+../src/addon.h:45:15: error: ‘class v8::Object’ has no member named ‘ForceSet’
+       target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+               ^
+../src/wiringPi.cc:747:3: note: in expansion of macro ‘EXPORT_CONSTANT_INT’
+   EXPORT_CONSTANT_INT(PI_VERSION_UNKNOWN);
+   ^~~~~~~~~~~~~~~~~~~
+../src/addon.h:45:15: error: ‘class v8::Object’ has no member named ‘ForceSet’
+       target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+               ^
+../src/wiringPi.cc:748:3: note: in expansion of macro ‘EXPORT_CONSTANT_INT’
+   EXPORT_CONSTANT_INT(PI_VERSION_1);
+   ^~~~~~~~~~~~~~~~~~~
+../src/addon.h:45:15: error: ‘class v8::Object’ has no member named ‘ForceSet’
+       target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+               ^
+../src/wiringPi.cc:749:3: note: in expansion of macro ‘EXPORT_CONSTANT_INT’
+   EXPORT_CONSTANT_INT(PI_VERSION_1_1);
+   ^~~~~~~~~~~~~~~~~~~
+../src/addon.h:45:15: error: ‘class v8::Object’ has no member named ‘ForceSet’
+       target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+               ^
+../src/wiringPi.cc:750:3: note: in expansion of macro ‘EXPORT_CONSTANT_INT’
+   EXPORT_CONSTANT_INT(PI_VERSION_1_2);
+   ^~~~~~~~~~~~~~~~~~~
+../src/addon.h:45:15: error: ‘class v8::Object’ has no member named ‘ForceSet’
+       target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+               ^
+../src/wiringPi.cc:751:3: note: in expansion of macro ‘EXPORT_CONSTANT_INT’
+   EXPORT_CONSTANT_INT(PI_VERSION_2);
+   ^~~~~~~~~~~~~~~~~~~
+../src/addon.h:45:15: error: ‘class v8::Object’ has no member named ‘ForceSet’
+       target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+               ^
+../src/wiringPi.cc:753:3: note: in expansion of macro ‘EXPORT_CONSTANT_INT’
+   EXPORT_CONSTANT_INT(PI_MAKER_UNKNOWN);
+   ^~~~~~~~~~~~~~~~~~~
+../src/addon.h:45:15: error: ‘class v8::Object’ has no member named ‘ForceSet’
+       target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+               ^
+../src/wiringPi.cc:754:3: note: in expansion of macro ‘EXPORT_CONSTANT_INT’
+   EXPORT_CONSTANT_INT(PI_MAKER_EGOMAN);
+   ^~~~~~~~~~~~~~~~~~~
+../src/addon.h:45:15: error: ‘class v8::Object’ has no member named ‘ForceSet’
+       target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+               ^
+../src/wiringPi.cc:755:3: note: in expansion of macro ‘EXPORT_CONSTANT_INT’
+   EXPORT_CONSTANT_INT(PI_MAKER_SONY);
+   ^~~~~~~~~~~~~~~~~~~
+../src/addon.h:45:15: error: ‘class v8::Object’ has no member named ‘ForceSet’
+       target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+               ^
+../src/wiringPi.cc:756:3: note: in expansion of macro ‘EXPORT_CONSTANT_INT’
+   EXPORT_CONSTANT_INT(PI_MAKER_QISDA);
+   ^~~~~~~~~~~~~~~~~~~
+../src/addon.h:45:15: error: ‘class v8::Object’ has no member named ‘ForceSet’
+       target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+               ^
+../src/wiringPi.cc:757:3: note: in expansion of macro ‘EXPORT_CONSTANT_INT’
+   EXPORT_CONSTANT_INT(PI_MAKER_MBEST);
+   ^~~~~~~~~~~~~~~~~~~
+../src/addon.h:68:17: error: ‘class v8::Object’ has no member named ‘ForceSet’
+         target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+                 ^
+../src/wiringPi.cc:759:3: note: in expansion of macro ‘EXPORT_CONSTANT_STRING_ARRAY’
+   EXPORT_CONSTANT_STRING_ARRAY(PI_MODEL_NAMES, piModelNames, 7);
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/addon.h:68:17: error: ‘class v8::Object’ has no member named ‘ForceSet’
+         target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+                 ^
+../src/wiringPi.cc:760:3: note: in expansion of macro ‘EXPORT_CONSTANT_STRING_ARRAY’
+   EXPORT_CONSTANT_STRING_ARRAY(PI_REVISION_NAMES, piRevisionNames, 5);
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/addon.h:68:17: error: ‘class v8::Object’ has no member named ‘ForceSet’
+         target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+                 ^
+../src/wiringPi.cc:761:3: note: in expansion of macro ‘EXPORT_CONSTANT_STRING_ARRAY’
+   EXPORT_CONSTANT_STRING_ARRAY(PI_MAKER_NAMES, piMakerNames, 5);
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/addon.h:45:15: error: ‘class v8::Object’ has no member named ‘ForceSet’
+       target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+               ^
+../src/wiringPi.cc:763:3: note: in expansion of macro ‘EXPORT_CONSTANT_INT’
+   EXPORT_CONSTANT_INT(FSEL_INPT);
+   ^~~~~~~~~~~~~~~~~~~
+../src/addon.h:45:15: error: ‘class v8::Object’ has no member named ‘ForceSet’
+       target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+               ^
+../src/wiringPi.cc:764:3: note: in expansion of macro ‘EXPORT_CONSTANT_INT’
+   EXPORT_CONSTANT_INT(FSEL_OUTP);
+   ^~~~~~~~~~~~~~~~~~~
+../src/addon.h:45:15: error: ‘class v8::Object’ has no member named ‘ForceSet’
+       target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+               ^
+../src/wiringPi.cc:765:3: note: in expansion of macro ‘EXPORT_CONSTANT_INT’
+   EXPORT_CONSTANT_INT(FSEL_ALT0);
+   ^~~~~~~~~~~~~~~~~~~
+../src/addon.h:45:15: error: ‘class v8::Object’ has no member named ‘ForceSet’
+       target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+               ^
+../src/wiringPi.cc:766:3: note: in expansion of macro ‘EXPORT_CONSTANT_INT’
+   EXPORT_CONSTANT_INT(FSEL_ALT1);
+   ^~~~~~~~~~~~~~~~~~~
+../src/addon.h:45:15: error: ‘class v8::Object’ has no member named ‘ForceSet’
+       target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+               ^
+../src/wiringPi.cc:767:3: note: in expansion of macro ‘EXPORT_CONSTANT_INT’
+   EXPORT_CONSTANT_INT(FSEL_ALT2);
+   ^~~~~~~~~~~~~~~~~~~
+../src/addon.h:45:15: error: ‘class v8::Object’ has no member named ‘ForceSet’
+       target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+               ^
+../src/wiringPi.cc:768:3: note: in expansion of macro ‘EXPORT_CONSTANT_INT’
+   EXPORT_CONSTANT_INT(FSEL_ALT3);
+   ^~~~~~~~~~~~~~~~~~~
+../src/addon.h:45:15: error: ‘class v8::Object’ has no member named ‘ForceSet’
+       target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+               ^
+../src/wiringPi.cc:769:3: note: in expansion of macro ‘EXPORT_CONSTANT_INT’
+   EXPORT_CONSTANT_INT(FSEL_ALT4);
+   ^~~~~~~~~~~~~~~~~~~
+../src/addon.h:45:15: error: ‘class v8::Object’ has no member named ‘ForceSet’
+       target->ForceSet(v8::String::NewFromUtf8(isolate, #name, v8::String::kInternalizedString), \
+               ^
+../src/wiringPi.cc:770:3: note: in expansion of macro ‘EXPORT_CONSTANT_INT’
+   EXPORT_CONSTANT_INT(FSEL_ALT5);
+   ^~~~~~~~~~~~~~~~~~~
+wiringPi.target.mk:142: recipe for target 'Release/obj.target/wiringPi/src/wiringPi.o' failed
+make: *** [Release/obj.target/wiringPi/src/wiringPi.o] Error 1
+make: Leaving directory '/home/pi/BierBot/server/node_modules/wiring-pi/build'
+gyp ERR! build error 
+gyp ERR! stack Error: `make` failed with exit code: 2
+gyp ERR! stack     at ChildProcess.onExit (/usr/lib/node_modules/npm/node_modules/node-gyp/lib/build.js:262:23)
+gyp ERR! stack     at ChildProcess.emit (events.js:182:13)
+gyp ERR! stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:240:12)
+gyp ERR! System Linux 4.14.71-v7+
+gyp ERR! command "/usr/bin/node" "/usr/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js" "rebuild"
+gyp ERR! cwd /home/pi/BierBot/server/node_modules/wiring-pi
+gyp ERR! node -v v10.12.0
+gyp ERR! node-gyp -v v3.8.0
+gyp ERR! not ok 
+done.
